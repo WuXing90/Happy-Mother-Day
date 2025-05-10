@@ -24,41 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    document.body.addEventListener('click', function() {
-        if (audio.paused) {
-            audio.play().catch(e => console.log('自动播放被阻止:', e));
-        }
-    }, { once: true });
-    
+    const themeToggle = document.createElement('button');
+    themeToggle.id = 'theme-toggle';
+    themeToggle.textContent = '🌙 夜间模式';
+    document.body.appendChild(themeToggle);
+
+    if (localStorage.getItem('nightMode') === 'true') {
+        document.body.classList.add('night-mode');
+        themeToggle.textContent = '☀️ 白天模式';
+    }
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('night-mode');
+        const isNightMode = document.body.classList.contains('night-mode');
+        themeToggle.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
+        localStorage.setItem('nightMode', isNightMode);
+    });
+
     createHearts();
-});
-
-const darkModeToggle = document.createElement('button');
-darkModeToggle.id = 'dark-mode-toggle';
-darkModeToggle.textContent = '🌙 夜间模式';
-document.body.appendChild(darkModeToggle);
-
-darkModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('night-mode');
-    this.textContent = document.body.classList.contains('night-mode') ? '☀️ 白天模式' : '🌙 夜间模式';
-    
-    localStorage.setItem('nightMode', document.body.classList.contains('night-mode'));
-});
-
-if (localStorage.getItem('nightMode') === 'true') {
-    document.body.classList.add('night-mode');
-    darkModeToggle.textContent = '☀️ 白天模式';
-}
-
-const themeToggle = document.getElementById('dark-mode-toggle');
-
-document.body.classList.add('night-mode');
-
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode-toggle');
-  document.body.classList.toggle('night-mode');
-  
-  themeToggle.textContent = document.body.classList.contains('night-mode') 
-    ? '☀️ 白天模式' 
-    : '🌙 夜间模式';
 });
