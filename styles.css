@@ -206,3 +206,41 @@ body {
         height: 40px;
     }
 }
+
+body.night-mode {
+    background: linear-gradient(135deg, #3a2a4a, #6b3d6b, #8d4c8d);
+    color: #f8e1f7;
+}
+
+.night-mode .title {
+    text-shadow: 0 0 10px #ff9ec6, 0 0 20px #ff6b9e;
+    color: #ffd6e9;
+}
+
+.night-mode .flower {
+    background-color: #c77bc4;
+    box-shadow: 0 0 15px rgba(199, 123, 196, 0.7);
+}
+.night-mode .flower::before, 
+.night-mode .flower::after {
+    background-color: #c77bc4;
+}
+
+.night-mode #music-btn {
+    background: rgba(200, 150, 200, 0.3);
+    color: #f8e1f7;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
