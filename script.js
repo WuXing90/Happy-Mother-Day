@@ -24,19 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    const musicBtn = document.getElementById('music-btn');
-    const audio = document.querySelector('audio');
-    
-    musicBtn.addEventListener('click', function() {
-        if (audio.paused) {
-            audio.play();
-            musicBtn.textContent = '🎵 背景音乐';
-        } else {
-            audio.pause();
-            musicBtn.textContent = '▶️ 播放音乐';
-        }
-    });
-    
     document.body.addEventListener('click', function() {
         if (audio.paused) {
             audio.play().catch(e => console.log('自动播放被阻止:', e));
