@@ -24,22 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    const themeToggle = document.createElement('button');
-    themeToggle.id = 'theme-toggle';
-    themeToggle.textContent = '🌙 夜间模式';
-    document.body.appendChild(themeToggle);
-
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    
     if (localStorage.getItem('nightMode') === 'true') {
         document.body.classList.add('night-mode');
-        themeToggle.textContent = '☀️ 白天模式';
+        toggleBtn.textContent = '☀️ 白天模式';
     }
-
-    themeToggle.addEventListener('click', function() {
+    
+    toggleBtn.addEventListener('click', function() {
         document.body.classList.toggle('night-mode');
         const isNightMode = document.body.classList.contains('night-mode');
-        themeToggle.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
+        
+        toggleBtn.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
+        
         localStorage.setItem('nightMode', isNightMode);
     });
-
-    createHearts();
 });
