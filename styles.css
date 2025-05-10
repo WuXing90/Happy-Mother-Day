@@ -219,11 +219,27 @@ body.night-mode {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 8px 12px;
+    padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
     backdrop-filter: blur(5px);
     z-index: 100;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+#dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+#dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+
+.night-mode #dark-mode-toggle {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .author-info {
@@ -297,10 +313,4 @@ body.night-mode {
 }
 .night-mode .github-button {
     background: rgba(199, 123, 196, 0.4);
-}
-
-body {
-    transition: 
-        background 0.6s ease,
-        color 0.4s ease;
 }
