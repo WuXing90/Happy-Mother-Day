@@ -315,9 +315,9 @@ body.night-mode {
   color: #f8e1f7;
 }
 
-#theme-toggle {
+#dark-mode-toggle {
   transition: transform 0.3s ease;
 }
-#theme-toggle:hover {
+#dark-mode-toggle:hover {
   transform: scale(1.05);
 }
