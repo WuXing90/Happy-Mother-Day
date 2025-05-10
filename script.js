@@ -49,3 +49,16 @@ if (localStorage.getItem('nightMode') === 'true') {
     document.body.classList.add('night-mode');
     darkModeToggle.textContent = '☀️ 白天模式';
 }
+
+const themeToggle = document.getElementById('theme-toggle');
+
+document.body.classList.add('day-mode');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('night-mode');
+  document.body.classList.toggle('day-mode');
+  
+  themeToggle.textContent = document.body.classList.contains('night-mode') 
+    ? '☀️ 白天模式' 
+    : '🌙 夜间模式';
+});
