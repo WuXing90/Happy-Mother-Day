@@ -52,11 +52,11 @@ if (localStorage.getItem('nightMode') === 'true') {
 
 const themeToggle = document.getElementById('dark-mode-toggle');
 
-document.body.classList.add('day-mode');
+document.body.classList.add('night-mode');
 
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode-toggle');
-  document.body.classList.toggle('day-mode');
+  document.body.classList.toggle('night-mode');
   
   themeToggle.textContent = document.body.classList.contains('night-mode') 
     ? '☀️ 白天模式' 
