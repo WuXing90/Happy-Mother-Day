@@ -12,6 +12,8 @@ body {
     text-align: center;
     background: 1.2s ease;
     color: 0.8s ease;
+    transition: all 0.6s ease;
+    transform: scale(1);
 }
 
 .container {
@@ -260,6 +262,8 @@ body.night-mode {
     align-items: center;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s ease;
+    transform: scale(1);
 }
 
 .author-profile {
@@ -297,7 +301,8 @@ body.night-mode {
     border-radius: 25px;
     text-decoration: none;
     font-size: 1rem;
-    transition: all 0.3s;
+    transition: all 0.6s ease;
+    transform: scale(1);
     min-width: 180px;
     justify-content: center;
 }
