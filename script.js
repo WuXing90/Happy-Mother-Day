@@ -25,19 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    
-    if (localStorage.getItem('nightMode') === 'true') {
-        document.body.classList.add('night-mode');
-        toggleBtn.textContent = '☀️ 白天模式';
-    }
-    
-    toggleBtn.addEventListener('click', function() {
-        document.body.classList.toggle('night-mode');
-        const isNightMode = document.body.classList.contains('night-mode');
-        
-        toggleBtn.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
-        
-        localStorage.setItem('nightMode', isNightMode);
-    });
+  const toggleBtn = document.getElementById('dark-mode-toggle');
+  if (!toggleBtn) return console.error("找不到按钮！");
+
+  const isNightMode = localStorage.getItem('nightMode') === 'true';
+  document.body.classList.toggle('night-mode', isNightMode);
+  toggleBtn.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
+
+  toggleBtn.addEventListener('click', function() {
+    const isNowNightMode = !document.body.classList.contains('night-mode');
+    document.body.classList.toggle('night-mode', isNowNightMode);
+    toggleBtn.textContent = isNowNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
+    localStorage.setItem('nightMode', isNowNightMode);
+  });
 });
