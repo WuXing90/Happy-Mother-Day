@@ -225,3 +225,68 @@ body.night-mode {
     backdrop-filter: blur(5px);
     z-index: 100;
 }
+
+.author-info {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.author-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.author-name {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.github-button {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.github-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.github-icon {
+    margin-left: 5px;
+}
+
+.night-mode .author-info {
+    background: rgba(58, 42, 74, 0.7);
+}
+.night-mode .github-button {
+    background: rgba(199, 123, 196, 0.3);
+}
