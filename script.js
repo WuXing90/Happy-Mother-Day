@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     function createHearts() {
         const heartsContainer = document.querySelector('.hearts');
         const numHearts = 15;
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-document.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     
     if (localStorage.getItem('nightMode') === 'true') {
@@ -36,4 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         darkModeToggle.textContent = isNightMode ? '☀️ 白天模式' : '🌙 夜间模式';
         localStorage.setItem('nightMode', isNightMode);
     });
+    
+    createHearts();
 });
